@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+// 1. Configuration and helpers:
+// - the 'abstracts/' folder should not output a single line of CSS if compiled on its own
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+// 2. Vendors:
+@import "vendors/normalize";
+
+// 3. Base stuff:
+@import "base/responsive";
+@import "base/tags";
+@import "base/utilities";
+
+// 4. Layout-related sections:
+
+// 5. Components:;
+@import "components/buttons.scss";
+@import "components/cards.scss";
+@import "components/dropdown.scss";
+@import "components/hashtags.scss";
+@import "components/logo.scss";
+@import "components/modals.scss";
+
+// 6. Pages specific styles:
+@import "pages/home";
+@import "pages/photographer";
+@import "pages/spa";
+
+// 7. Themes:

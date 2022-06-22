@@ -1,0 +1,64 @@
+/* =======================
+   RAW TAGS DEFAULT STYLES
+   ======================= */
+
+html {
+  box-sizing: border-box;
+
+  color: $neutral-900;
+  font-family: $font-primary;
+  font-size: $txt-size;
+  font-weight: 400;
+
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+header {
+  display: flex;
+}
+
+a {
+  color: $neutral-900;
+  text-decoration: none;
+
+  &:hover {
+    color: $neutral-900;
+  }
+}
+
+h1,
+h2 {
+  margin: 1rem 0;
+
+  color: $primary-300;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: $h1-size;
+}
+
+h2 {
+  font-size: $h2-size;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}

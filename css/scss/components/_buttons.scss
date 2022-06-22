@@ -1,0 +1,63 @@
+/* =======
+   BUTTONS
+   ======= */
+
+.c-btn {
+  border: none;
+  border-radius: 0.25rem;
+  outline: none;
+
+  font-weight: 700;
+
+  background: $primary-200;
+
+  cursor: pointer;
+
+  &--cta {
+    margin: 2rem;
+    padding: 1.25rem;
+
+    color: white;
+    font-size: $h5-size;
+    font-weight: 700;
+
+    background: $primary-700;
+
+    transition: background-color 300ms;
+
+    &:focus {
+      filter: drop-shadow(2px 4px 4px $primary-700);
+      transform: translateY(-0.125rem);
+    }
+
+    &:hover {
+      background: lighten($primary-700, 10);
+    }
+  }
+}
+
+/* Button appearing while scrolling, to return to the top of the page: */
+#up-button {
+  position: fixed;
+  top: 1rem;
+  left: calc(50% - 5rem);
+  z-index: $z-fullscreen-functionality;
+
+  width: 10rem;
+  padding: 0.5rem;
+
+  color: black;
+  text-align: center;
+
+  transform: translateY(-4rem);
+
+  transition: color 250ms, transform 300ms;
+
+  &:hover {
+    color: $neutral-100;
+  }
+
+  &.visible {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,176 @@
+/* =====
+   CARDS
+   ===== */
+
+/* Photographers cards on home page: */
+.c-photographer-card {
+  margin: 2rem 0 1rem 0;
+
+  text-align: center;
+
+  img {
+    border-radius: 50%;
+
+    object-fit: cover;
+  }
+
+  a:focus {
+    display: block;
+
+    outline: none;
+
+    img {
+      filter: drop-shadow(2px 8px 4px $neutral-500);
+      transform: translateY(-0.25rem);
+    }
+
+    h2 {
+      color: $primary-700;
+    }
+  }
+
+  &__location {
+    color: $primary-700;
+    font-size: $h5-size;
+  }
+
+  &__tagline {
+    font-size: $h6-size;
+    font-weight: 500;
+  }
+
+  nav {
+    padding: 1rem 2rem;
+  }
+}
+
+/* Media cards on each photographer page: */
+.c-medium-card {
+  margin: 1rem 0;
+  overflow: hidden;
+
+  color: $primary-700;
+  font-size: $h3-size;
+  font-weight: 500;
+  text-align: center;
+
+  &__img {
+    position: relative;
+    height: 300px;
+
+    cursor: pointer;
+
+    img {
+      border-radius: 0.25rem;
+
+      object-fit: cover;
+    }
+
+    &:focus {
+      outline: none;
+
+      img {
+        border: 0.25rem solid $primary-200;
+      }
+    }
+
+    i {
+      position: absolute;
+      top: 4.5rem;
+      left: calc(50% - 5rem);
+      z-index: $z-in-front;
+
+      color: white;
+      font-size: 10rem;
+
+      opacity: 0.6;
+    }
+  }
+
+  &__infos {
+    width: 350px;
+    margin: auto;
+  }
+
+  h2,
+  p,
+  button {
+    font-size: $h3-size;
+  }
+
+  h2 {
+    margin: 0.5rem 0;
+    padding-right: 0.5rem;
+    overflow: hidden;
+
+    color: $primary-700;
+    text-align: left;
+    text-overflow: ellipsis;
+
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
+  button {
+    margin-top: 1px;
+    padding: 0;
+    height: 2.5rem;
+
+    color: $primary-700;
+    font-weight: 500;
+    text-align: right;
+
+    background: white;
+
+    transition: color 300ms;
+
+    &:focus,
+    &:hover {
+      color: lighten($primary-700, 25);
+    }
+  }
+
+  @media (max-width: $small-breakpoint - 1) {
+    margin: 1rem 0 0 0;
+
+    &__img {
+      height: 190px;
+      overflow: hidden;
+
+      i {
+        font-size: 7rem;
+        top: 2.5rem;
+        left: calc(50% - 3.5rem);
+      }
+    }
+
+    &__img img,
+    &__infos {
+      width: 270px;
+    }
+
+    &__infos {
+      h2 {
+        font-size: $txt-size;
+      }
+
+      p,
+      button {
+        position: relative;
+
+        font-size: $sm-size;
+      }
+
+      p {
+        top: 2px;
+      }
+
+      button {
+        top: 1px;
+
+        height: 2rem;
+        margin: 0;
+      }
+    }
+  }
+}

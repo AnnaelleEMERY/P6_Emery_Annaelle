@@ -1,0 +1,40 @@
+/* ========
+   HASHTAGS
+   ======== */
+
+.c-tag {
+  display: inline-block;
+
+  margin: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid $neutral-300;
+  border-radius: 1rem;
+
+  color: $primary-700;
+
+  transition: border-color 250ms, color 250ms, background-color 250ms;
+
+  &:focus {
+    border-color: $primary-300;
+    outline: none;
+
+    color: $primary-700;
+
+    background: $primary-200;
+  }
+
+  &:hover,
+  &--checked {
+    border-color: $primary-700;
+
+    color: white;
+  }
+
+  &--checked {
+    background: $primary-700;
+  }
+
+  &:hover {
+    background: lighten($primary-700, 10);
+  }
+}

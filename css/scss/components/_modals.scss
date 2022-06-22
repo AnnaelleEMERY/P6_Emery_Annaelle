@@ -1,0 +1,293 @@
+/* ======
+   MODALS
+   ====== */
+
+$open-modal-duration: 800ms;
+
+@keyframes open-modal {
+  from {
+    top: -20rem;
+
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+
+    opacity: 1;
+  }
+}
+
+.c-modal__background {
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: $z-modal;
+
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  &.displayed {
+    display: block;
+  }
+}
+
+.c-modal {
+  position: relative;
+  z-index: $z-modal + 100;
+
+  width: fit-content;
+  margin: 1.5rem auto;
+  border-radius: 0.25rem;
+  overflow: hidden;
+
+  color: $primary-700;
+
+  background: white;
+
+  animation: open-modal $open-modal-duration forwards;
+}
+
+#close-icon {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+
+  font-size: 3rem;
+
+  cursor: pointer;
+
+  @media (max-width: $medium-breakpoint - 1) {
+    top: 2rem;
+
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: $small-breakpoint - 1) {
+    font-size: 1.5rem;
+  }
+}
+
+/* Modal to send a message to a photographer: */
+.c-contact-modal {
+  width: 100%;
+  max-width: 40rem;
+  padding: 1.5rem 2rem;
+
+  color: black;
+
+  background: $primary-200;
+
+  #close-icon {
+    color: white;
+
+    &:hover {
+      color: $neutral-900;
+    }
+  }
+
+  #contact-form-wrapper,
+  #contact-success-wrapper {
+    height: 0;
+    overflow: hidden;
+  }
+
+  #contact-success-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    font-size: $h2-size;
+    text-align: center;
+
+    p {
+      margin: 1rem 2rem;
+
+      &:first-child {
+        margin-top: 10rem;
+      }
+    }
+  }
+
+  h1 {
+    margin: 0 0 2rem 0;
+
+    color: black;
+    font-size: 3rem;
+  }
+
+  label,
+  input {
+    display: block;
+  }
+
+  label {
+    margin: 1rem 0 0.5rem 0;
+
+    font-size: 2rem;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    border: 0.25rem solid white;
+    border-radius: 0.25rem;
+
+    font-size: $h3-size;
+
+    &:focus {
+      border-color: $primary-700;
+      outline: none;
+    }
+  }
+
+  .c-btn {
+    display: block;
+
+    margin: 1.5rem 0 1rem 0;
+    padding: 1.5rem 3rem;
+  }
+
+  @media (max-width: $small-breakpoint - 1) {
+    max-width: 30rem;
+
+    #contact-success-wrapper {
+      font-size: $h4-size;
+    }
+
+    h1 {
+      margin: 0.5rem 0 1.5rem 0;
+
+      font-size: 1.75rem;
+    }
+
+    label {
+      font-size: $h5-size;
+    }
+
+    input,
+    textarea {
+      padding: 0.75rem 0.5rem;
+
+      font-size: $h5-size;
+    }
+
+    .c-btn {
+      margin: 1.5rem auto 2rem auto;
+      padding: 0.5rem 3rem;
+    }
+  }
+}
+
+/* Modal to enlarge each medium of a photographer: */
+.c-media-modal {
+  max-width: 70rem;
+  padding: 2rem 0 1.5rem 0;
+
+  &__carousel {
+    display: flex;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    .icon-wrapper {
+      display: flex;
+      align-items: center;
+
+      padding: 1.5rem;
+    }
+
+    i {
+      font-size: $h1-size;
+
+      cursor: pointer;
+
+      &:hover {
+        color: lighten($primary-700, 10);
+      }
+    }
+  }
+
+  &__medium {
+    display: flex;
+    align-items: center;
+
+    height: 50rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+
+    img,
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  h2 {
+    margin: 0.5rem 5.5rem 0 5.5rem;
+    overflow: hidden;
+
+    color: $primary-700;
+    text-overflow: ellipsis;
+    font-size: $h3-size;
+    white-space: nowrap;
+  }
+
+  @media (max-width: $medium-breakpoint - 1) {
+    max-width: 50rem;
+
+    &__carousel i {
+      font-size: 3rem;
+    }
+
+    &__medium {
+      height: 35rem;
+    }
+
+    h2 {
+      margin: 0.5rem 5rem 0 5rem;
+    }
+  }
+
+  @media (max-width: $small-breakpoint - 1) {
+    max-width: 40rem;
+    margin: 10rem auto;
+
+    #close-icon {
+      right: 0.75rem;
+    }
+
+    &__carousel {
+      .icon-wrapper {
+        padding: 0.5rem;
+      }
+
+      i {
+        font-size: 2rem;
+      }
+    }
+
+    &__medium {
+      max-width: 24rem;
+      max-height: 16rem;
+    }
+
+    h2 {
+      max-width: 240px;
+      margin: 0.5rem 2.25rem 0 2.25rem;
+
+      font-size: $h5-size;
+    }
+  }
+}
